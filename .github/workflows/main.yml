@@ -1,0 +1,41 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build app
+        run: npm run build
+
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@v2
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_PASSWORD }} # Use SSH private key for authentication
+          REMOTE_HOST: ${{ secrets.SERVER_HOST }} # Remote server's IP address
+          REMOTE_USER: ${{ secrets.SERVER_USERNAME }} # Remote server's username
+          SOURCE: dist/ # Path to the build directory
+          TARGET: /var/www/ui.learning_app/dist/ # Remote deployment directory
+      - name: Realod nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            sudo systemctl reload nginx
