@@ -11,13 +11,13 @@ function Header() {
           </div>
           <div className="flex h-full flex-1 justify-end items-center ">
             <div className="flex items-center justify-center h-full">
-              <div className="hover:bg-slate-200 h-full flex items-center px-2 md:px-8 cursor-pointer">
+              <div className="hover:bg-slate-200 md:text-lg text-xs h-full flex items-center px-2 md:px-8 cursor-pointer">
                 Home
               </div>
-              <div className="hover:bg-slate-200 h-full flex items-center px-2 md:px-8 cursor-pointer">
+              <div className="hover:bg-slate-200 md:text-lg text-xs h-full flex items-center px-2 md:px-8 cursor-pointer">
                 Courses
               </div>
-              <div className="hover:bg-slate-200 h-full flex items-center px-2 md:px-8 cursor-pointer">
+              <div className="hover:bg-slate-200 md:text-lg text-xs h-full flex items-center px-2 md:px-8 cursor-pointer">
                 My Learnings
               </div>
             </div>
