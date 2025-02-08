@@ -43,11 +43,11 @@ function CourseCard() {
 
             <div className="flex w-full h-10 md:mt-6 p-2 justify-between">
               <div className="flex w-1/2 md:w-1/3 rounded-full h-full bg-blue-800 hover:bg-blue-700 items-center justify-center cursor-pointer">
-                <p className="text-white text-xs">Enroll Now</p>
+                <p className="text-white md:text-sm text-[8px]">Enroll Now</p>
               </div>
 
               <div className="flex w-1/3  h-full  items-center justify-center">
-                <p className="text-black font-bold text-sm">Free !</p>
+                <p className="text-black font-bold md:text-sm text-[8px]">Free !</p>
               </div>
             </div>
           </div>
