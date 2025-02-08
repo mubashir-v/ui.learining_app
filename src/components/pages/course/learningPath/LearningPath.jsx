@@ -18,7 +18,7 @@ function LearningPath() {
             </div>
           </div>
           {/* Session */}
-          <div className="h-64 md:h-[500px] w-full mt-4 px-4 ">
+          <div className="h-64 md:h-[500px] xl:h-[700px] w-full mt-4 px-4 ">
             <iframe
               width="100%"
               height="100%"
@@ -55,7 +55,7 @@ function LearningPath() {
 
           {/* Module Note */}
           <div className="w-full p-4">
-            <div className="max-h-[500px] md:max-h-[600px] overflow-y-auto scrollbar-hidden flex flex-col border rounded-lg   w-full p-4">
+            <div className="max-h-[500px] md:max-h-[600px] xl:max-h-[600px] overflow-y-auto scrollbar-hidden flex flex-col border rounded-lg   w-full p-4">
               {/* Main Heading */}
               <div className="py-2">
                 <p className=" text-md md:text-xl font-bold">
