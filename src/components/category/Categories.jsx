@@ -13,7 +13,7 @@ function Categories() {
           </p>
         </div>
       </div>
-      <div className="h-32 mt-6 w-full mb-5">
+      <div className="md:mt-6 w-full md:mb-5">
         <div className="flex h-full gap-4 md:gap-10 w-full justify-center items-start overflow-x-scroll scrollbar-hidden">
             <CategoryItem icon={IoCodeSlash}/>
             <CategoryItem icon={GiPencilBrush}/>
