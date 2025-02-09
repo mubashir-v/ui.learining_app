@@ -10,7 +10,7 @@ function RootLayout() {
       </div>
 
       {/* Outlet (Scrollable Content) */}
-      <div className="flex-1 w-full overflow-y-auto scrollbar-hidden">
+      <div className="flex-1 w-full overflow-y-auto scrollbar-hidden mb-10 md:mb-0">
         <Outlet />
       </div>
     </div>
