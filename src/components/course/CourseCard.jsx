@@ -4,14 +4,14 @@ import { IoCodeSlash } from "react-icons/io5";
 import { Link } from "react-router-dom";
 function CourseCard() {
   return (
-    <div className="flex h-72 md:h-96 w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 items-center justify-center p-1 md:p-2 ">
+    <div className="flex h-72 md:h-96 w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 xl:p-1 items-center justify-center p-1 md:p-2 ">
       <Link
         to={"/course/course-slug"}
         className="h-full w-full border rounded-lg shadow-lg bg-white  overflow-hidden hover:shadow-sm hover:shadow-black"
       >
         <div className="flex flex-col h-full w-full ">
           {/* Top Section */}
-          <div className="w-full h-2/4 bg-slate-50 p-2 md:p-4 ">
+          <div className="w-full h-2/4 bg-slate-50 p-2 xl:p-2 md:p-4 ">
             <img src={courseHeader} />
           </div>
 

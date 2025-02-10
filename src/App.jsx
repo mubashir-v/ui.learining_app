@@ -4,12 +4,13 @@ import RootLayout from "./layout/RootLayout";
 import Home from "./components/pages/home/Home";
 import CourseDetails from "./components/pages/course/details/CourseDetails";
 import LearningPath from "./components/pages/course/learningPath/LearningPath";
+import Login from "./components/pages/auth/Login";
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/login" element={<div>Login</div>} />
+          <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<div>Redister</div>} />
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />

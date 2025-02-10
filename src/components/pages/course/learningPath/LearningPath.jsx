@@ -18,7 +18,7 @@ function LearningPath() {
             </div>
           </div>
           {/* Session */}
-          <div className="h-64 md:h-[500px] xl:h-[700px] w-full mt-4 px-4 ">
+          <div className="h-64 md:h-[500px] lg:h-[500px] 2xl:h-[700px]  w-full mt-4 px-4 ">
             <iframe
               width="100%"
               height="100%"
@@ -26,7 +26,6 @@ function LearningPath() {
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
-              allowfullscreen
             ></iframe>
           </div>
           {/* Session */}
@@ -205,7 +204,7 @@ function LearningPath() {
 
         {/* Sylubus List */}
         <div className="hidden md:flex flex-col w-full md:w-1/4 md:h-full border-l p-">
-        <MainItem/>
+          <MainItem />
         </div>
         {/* Sylubus List */}
 
@@ -226,7 +225,7 @@ function LearningPath() {
             </div>
           </div>
 
-          <MainItem/>
+          <MainItem />
         </div>
         {/* Sylubus List List small scrn  END */}
       </div>

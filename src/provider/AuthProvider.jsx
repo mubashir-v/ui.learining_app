@@ -1,36 +1,34 @@
-import  { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate, useLocation } from "react-router-dom";
+import { auth } from "../services/auth/firebase/firebase";
 
-// Create AuthContext
-const AuthContext = createContext();
+export const AuthContext = createContext();
+export const useAuth = () => useContext(AuthContext);
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Null means anonymous user
-  const navigate = useNavigate();
+export const AuthProvider = ({ children })=> {
+  const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
-  // Function to simulate login
-  const login = (userData) => {
-    setUser(userData); // Set user details
-    const redirectTo = location.state?.from?.pathname || "/";
-    navigate(redirectTo, { replace: true }); // Redirect to the page after login
-  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+        setUser(authUser);
+        setIsAuthenticated(true);
+      } else {
+        setUser(null); 
+        setIsAuthenticated(false); 
+      }
+    });
 
-  // Function to simulate logout
-  const logout = () => {
-    setUser(null);
-    navigate("/"); // Redirect to the home page
-  };
-
-  // Check if the user is logged in
-  const isAuthenticated = !!user;
+    return unsubscribe;
+  }, [location.pathname, navigate]);
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ user,isAuthenticated }}>{children}</AuthContext.Provider>
   );
-};
+}
 
-// Custom hook for easy access to auth context
-export const useAuth = () => useContext(AuthContext);
+
